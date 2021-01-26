@@ -1,0 +1,135 @@
+
+trade
+	commodity "High Value, Single Item"
+		"luminary's brain in a jar"
+		"saint's bejeweled bone"
+		"precious family heirloom"
+		"legendary musician's instrument"
+		"cryogenically-preserved billionaire"
+		"proto-AGI's neural core"
+		"single steel briefcase which has been welded shut"
+		"23rd century supercar"
+		"data drive"
+		"file folder"
+		"sealed letter"
+		"solid gold commode"
+		"monkey's paw sporting two extended digits"
+		"poker chip"
+	commodity "High Value, Low Volume"
+		"family heirlooms"
+		"diamonds"
+		"20th century vinyl records"
+		`21st century "Seedyroms"`
+		"22nd century paintings"
+		"grotesquely overbred dogs"
+		"hyperdrive schematics"
+		"classified documents"
+		"marble statuary"
+		"antique firearms"
+		"ming vases"
+		"triple-sealed containers of unknown contents"
+		"court evidence"
+		"antimatter"
+		"stable oganesson"
+		"improbably realistic squirrel costumes"
+		"exotic pets"
+	commodity "High Value, Bulk"
+		"O-negative blood"
+		"proprietary pharmaceuticals"
+		"gold"
+		"platinum"
+		"next year's game consoles"
+		"cash"
+		"black printer ink"
+		"uranium"
+		"horseshoe crab blood"
+		"lysergic acid diethylamide"
+		"scorpion venom"
+		"luxury agravs"
+		"high-density shield emitters"
+		"proto-AGI mainframe"
+		"RAM (8-terabyte sticks)"
+		"exobyte micro-cards"
+		"weapons components"
+		"laser rifles"
+		"laser pistols"
+		"luxury furniture"
+		"agarwood"
+
+phrase "friendly lightspeed"
+	word
+		"Efficiency, Security, Reliability:"
+	word
+		"That's the Lightspeed Logistics Solutions motto.
+		"These are the values that LLS swear by, and the qualities you can be assured of."
+		"Hire Lightspeed Logistics and you know what you'll get."
+
+phrase "friendly lightspeed elite"
+	word
+		"Efficiency, Security, Reliability:"
+	word
+		" That's the Lightspeed Logistics Solutions motto.
+		" These are the values that LLS swear by, and the qualities you can be assured of."
+		" Hire Lightspeed Logistics and you know what you'll get."
+		
+phrase "friendly lightspeed elite"
+	word
+		"Get a load of the"
+		"You can always depend on the"
+	word
+		" enhanced guns on this thing."
+		" up-armored hull we're sporting."
+
+government "LLS"
+	"display name" "Lightspeed Logistics Solutions"
+	swizzle 1
+	
+	"player reputation" 10
+	"attitude toward"
+		"LLS Elite" 1
+		"Pirate" -.2
+		"Korath" -.2
+		"Syndicate" .1
+		"Merchant" .2
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly lightspeed"
+	"hostile hail" "hostile lightspeed"
+
+government "LLS Elite"
+	"display name" "Lightspeed Logistics Solutions"
+	swizzle 1
+	
+	"player reputation" 10
+	"attitude toward"
+		"LLS" 1
+		"Pirate" -.2
+		"Korath" -.2
+		"Syndicate" .1
+		"Merchant" .2
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly lightspeed elite"
+	"hostile hail" "hostile lightspeed elite"
+	
+mission "LLS Delivery [0]"
+	name "Rush delivery to <planet>"
+	job
+	repeat
+	deadline
+	description "Deliver <cargo> to <destination> by <date>. Payment is <payment>."
+	cargo random 5 2 .1
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 4 10
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 16000
+		dialog phrase "generic cargo delivery payment"
+	
