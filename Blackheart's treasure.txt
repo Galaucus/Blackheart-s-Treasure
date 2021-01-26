@@ -1,0 +1,57 @@
+
+phrase "friendly lightspeed"
+	word
+		"Efficiency, Security, Reliability:"
+	word
+		"That's the Lightspeed Logistics Solutions motto.
+		"These are the values that LLS swear by, and the qualities you can be assured of."
+		"Hire Lightspeed Logistics and you know what you'll get."
+
+phrase "friendly lightspeed elite"
+	word
+		"Efficiency, Security, Reliability:"
+	word
+		" That's the Lightspeed Logistics Solutions motto.
+		" These are the values that LLS swear by, and the qualities you can be assured of."
+		" Hire Lightspeed Logistics and you know what you'll get."
+		
+phrase "friendly lightspeed elite"
+	word
+		"Get a load of the"
+		"You can always depend on the"
+	word
+		" enhanced guns on this thing."
+		" up-armored hull we're sporting."
+
+government "LLS"
+	"display name" "Lightspeed Logistics Solutions"
+	swizzle 1
+	
+	"player reputation" 10
+	"attitude toward"
+		"LLS Elite" 1
+		"Pirate" -.2
+		"Korath" -.2
+		"Syndicate" .1
+		"Merchant" .2
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly lightspeed"
+	"hostile hail" "hostile lightspeed"
+
+government "LLS Elite"
+	"display name" "Lightspeed Logistics Solutions"
+	swizzle 1
+	
+	"player reputation" 10
+	"attitude toward"
+		"LLS" 1
+		"Pirate" -.2
+		"Korath" -.2
+		"Syndicate" .1
+		"Merchant" .2
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly lightspeed elite"
+	"hostile hail" "hostile lightspeed elite"
+	
