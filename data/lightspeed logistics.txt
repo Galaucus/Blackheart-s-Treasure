@@ -1,0 +1,444 @@
+
+trade
+	commodity "Low Value, Single Item"
+		"safety packaging with a data drive"
+		"safety packaging with a file folder"
+		"safety packaging with a sealed letter"
+		"personal effects"
+		"care package contents"
+		"safety packaging with an organ for transplant"
+		"safety packaging with an anniversary gift"
+		"safety packaging with a bottle of 2860 merlot"
+		"paperwork"
+	commodity "High Value, Single Item"
+		"safety packaging with a luminary's brain in a jar"
+		"safety packaging with a saint's bejeweled bone"
+		"safety packaging with a precious family heirloom"
+		"safety packaging with a legendary musician's instrument"
+		"safety packaging with a cryogenically-preserved billionaire"
+		"safety packaging with a proto-AGI's neural core"
+		"safety packaging with a single steel briefcase which has been welded shut"
+		"safety packaging with a 23rd century supercar"
+		"safety packaging with a data drive"
+		"safety packaging with a file folder"
+		"safety packaging with a sealed letter"
+		"safety packaging with a solid gold commode"
+		"safety packaging with a monkey's paw sporting two extended digits"
+		"safety packaging with a poker chip"
+		"safety packaging with an antique coin"
+		"safety packaging with a jenga tower in a grav-stasis chamber"
+		"safety packaging with an embalmed corpse"
+		"safety packaging with a book bound in human skin"
+		"safety packaging with a dinosaur skull"
+		"safety packaging with a bottle of 2859 merlot"
+		"safety packaging with a 20th century animation still"
+	commodity "High Value, Low Volume"
+		"family heirlooms"
+		"diamonds"
+		"20th century vinyl records"
+		`21st century "Seedyroms"`
+		"22nd century paintings"
+		"grotesquely overbred dogs"
+		"hyperdrive schematics"
+		"classified documents"
+		"marble statuary"
+		"antique firearms"
+		"ming vases"
+		"triple-sealed containers of unknown contents"
+		"court evidence"
+		"antimatter"
+		"stable oganesson"
+		"improbably realistic squirrel costumes"
+		"exotic pets"
+		"explosives"
+		"organs"
+		"counterfeit art"
+		"exotic meat"
+		"university textbooks"
+		"jewelry"
+		"paperwork"
+	commodity "High Value, Bulk"
+		"O-negative blood"
+		"proprietary pharmaceuticals"
+		"gold"
+		"platinum"
+		"next year's game consoles"
+		"liquid assets"
+		"cash"
+		"black printer ink"
+		"uranium"
+		"horseshoe crab blood"
+		"lysergic acid diethylamide"
+		"scorpion venom"
+		"luxury agravs"
+		"high-density shield emitters"
+		"proto-AGI mainframe"
+		"RAM (8-terabyte sticks)"
+		"exobyte micro-cards"
+		"weapons components"
+		"laser rifles"
+		"laser pistols"
+		"luxury furniture"
+		"agarwood"
+		"explosives"
+		"ground combat vehicles"
+		"combat drones"
+		"servers"
+		"university textbooks"
+		"ablative cuirasses"
+		"tritium"
+		"fine wines"
+		"powered armor"
+		"ground-to-space missiles"
+		"high-resolution holoemitters"
+		"paperwork"
+
+phrase "lightspeed low value item delivery"
+
+phrase "lightspeed single item delivery"
+	"Delivery of the precious cargo plays out like loading in reverse. An armored truck is already waiting for you at the spaceport landing pad. Once you arrive the team disembarks, rapidly load the item, and sign for delivery. Whatever happens from here is no longer your problem."
+
+phrase "lightspeed low volume delivery"
+	"Placeholder"
+
+phrase "lightspeed bulk delivery"
+	"Placeholder"
+
+phrase "friendly lightspeed"
+	word
+		"Efficiency, Security, Reliability:"
+	word
+		"That's the Lightspeed Logistics Solutions motto.
+		"These are the values that LLS swear by, and the qualities you can be assured of."
+		"Hire Lightspeed Logistics and you know what you'll get."
+
+phrase "friendly lightspeed elite"
+	word
+		"Efficiency, Security, Reliability:"
+	word
+		" That's the Lightspeed Logistics Solutions motto.
+		" These are the values that LLS swear by, and the qualities you can be assured of."
+		" Hire Lightspeed Logistics and you know what you'll get."
+		
+phrase "friendly lightspeed elite"
+	word
+		"Get a load of the"
+		"You can always depend on the"
+	word
+		" enhanced guns on this thing."
+		" up-armored hull we're sporting."
+
+government "LLS"
+	"display name" "Lightspeed Logistics Solutions"
+	swizzle 1
+	
+	"player reputation" 10
+	"attitude toward"
+		"LLS Elite" 1
+		"Pirate" -.2
+		"Korath" -.2
+		"Syndicate" .1
+		"Merchant" .2
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly lightspeed"
+	"hostile hail" "hostile lightspeed"
+
+government "LLS Elite"
+	"display name" "Lightspeed Logistics Solutions"
+	swizzle 1
+	
+	"player reputation" 10
+	"attitude toward"
+		"LLS" 1
+		"Pirate" -.2
+		"Korath" -.2
+		"Syndicate" .1
+		"Merchant" .2
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly lightspeed elite"
+	"hostile hail" "hostile lightspeed elite"
+	
+mission "LLS Long-haul [low value]"
+	name "Long-haul courier to <planet>"
+	job
+	repeat
+	deadline 1 1.2
+	description "A client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task."
+	cargo "Low Value, Single Item" 1
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 8 12
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		dialog phrase "lightspeed low value item delivery"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained waiting harvests plunders
+			confusion 20
+		system destination
+		fleet
+			names "pirate"
+			variant
+				"Sparrow"
+				"Sparrow"
+			variant
+				"Sparrow"
+			variant
+				"Fury"
+			variant
+				"Berserker"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 3
+		fleet
+			names "pirate"
+			variant
+				"Sparrow"
+			variant
+				"Fury"
+			variant
+				"Berserker"
+		
+mission "LLS Long-haul [high value, single]"
+	name "Long-haul armored courier to <planet>"
+	job
+	repeat
+	deadline 1 1.4
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	cargo "High Value, Single Item" 1
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 2 8
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 20000
+		dialog phrase "lightspeed single item delivery"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained waiting harvests plunders
+			confusion 20
+		system destination
+		fleet
+			"pirate raid"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 2
+		fleet
+			"pirate raid"
+		
+mission "LLS Long-haul [high value, volume]"
+	name "Long-haul armored transport to <planet>"
+	job
+	repeat
+	deadline 1 1.5
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	cargo "High Value, Low Volume" 10 2 .1
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 2 8
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		dialog phrase "lightspeed low volume delivery"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained waiting harvests plunders
+			confusion 20
+		system destination
+		fleet
+			"pirate raid"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 3
+		fleet
+			"pirate raid" 2
+	
+mission "LLS Long-haul [high value, bulk]"
+	name "Armored transport to <planet>"
+	job
+	repeat
+	deadline 1 1.2
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	cargo "High Value, Bulk" 25 2 .05
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 8 12
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		dialog phrase "lightspeed bulk delivery"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained waiting harvests plunders
+			confusion 20
+		system destination
+		fleet
+			"pirate raid"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 3
+		fleet
+			"pirate raid" 2
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 5
+		fleet
+			"pirate raid" 3
+			
+mission "LLS Standard [high value, single]"
+	name "Armored courier to <planet>"
+	job
+	repeat
+	deadline 1 1.2
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	cargo "High Value, Single Item" 1
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 8 12
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 20000
+		dialog phrase "lightspeed single item delivery"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained waiting harvests plunders
+			confusion 20
+		system destination
+		fleet
+			"pirate raid"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 3
+		fleet
+			"pirate raid"
+		
+mission "LLS Standard [high value, volume]"
+	name "Armored transport to <planet>"
+	job
+	repeat
+	deadline 1 1.2
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	cargo "High Value, Low Volume" 10 2 .1
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 8 12
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		dialog phrase "lightspeed low volume delivery"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained waiting harvests plunders
+			confusion 20
+		system destination
+		fleet
+			"pirate raid"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 3
+		fleet
+			"pirate raid" 2
+	
+mission "LLS Standard [high value, bulk]"
+	name "Armored transport to <planet>"
+	job
+	repeat
+	deadline 1 1.2
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	cargo "High Value, Bulk" 25 2 .05
+	to offer
+		random < 90
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	destination
+		distance 8 12
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		dialog phrase "lightspeed bulk delivery"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained waiting harvests plunders
+			confusion 20
+		system destination
+		fleet
+			"pirate raid"
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 3
+		fleet
+			"pirate raid" 2
+	npc
+		government "Pirate"
+		personality nemesis unconstrained harvests plunders
+			confusion 20
+		system
+			distance 5
+		fleet
+			"pirate raid" 3
