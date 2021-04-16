@@ -1,3 +1,58 @@
+ship "Merchantman"
+	sprite "ship/freighter"
+	thumbnail "thumbnail/freighter"
+	attributes
+		category "Light Freighter"
+		"cost" 960000
+		"shields" 2600
+		"hull" 3000
+		"required crew" 2
+		"bunks" 5
+		"mass" 280
+		"drag" 5.4
+		"heat dissipation" .65
+		"fuel capacity" 900
+		"cargo space" 90
+		"outfit space" 280
+		"weapon capacity" 80
+		"engine capacity" 70
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Quad Blaster Turret"
+		"Anti-Missile Turret" 2
+		
+		"nGVF-EE Fuel Cell"
+		Supercapacitor 3
+		"D23-QP Shield Generator"
+		"Fuel Pod" 2
+		
+		Afterburner
+		"Greyhound Plasma Thruster"
+		"X2200 Ion Steering"
+		"Scram Drive"
+		
+	engine -7.5 92
+	engine 7.5 92
+	turret 0 -64 "Anti-Missile Turret"
+	turret 0 -4.5 "Anti-Missile Turret"
+	turret 0 64.5 "Quad Blaster Turret"
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion small"
+	description "The Freighter is designed by the Syndicate to be an efficient means of carrying cargo from system to system, but is so slow and difficult to land that most pilots hate flying them - not to mention it renders them sitting ducks if unescorted."
+	description "	That simply wouldn't do for Lightspeed Logistics Solutions, who decided the most economical way to keep their fleets safe but efficient was to design an aftermarket upgrade package for the standard freighter. Implemented in a specialized shipyard adjoined to their headquarters, the Merchantman upgrade adds more speed, more gun, and more armor to an otherwise unthreatening vessel. While you certainly wouldn't want to fly one into battle, these vessels are now more than capable of safely running away from one."
+	description "	Key modifications to the hull include a reduction in living quarters and cargo space in order to make room for increased fuel reserves and the increased space needed by the ship's engines and weapons. Armor plating has also been fastened stood-off from the hull, the better to absorb impacts without risking the integrity of precious cargo."
+
+shipyard Lightspeed
+	Merchantman
+
 system Scheat
 	pos -205 233
 	government Syndicate
@@ -67,7 +122,7 @@ planet "Lightspeed Logistics HQ"
 	spaceport `WIP`
 	shipyard "Syndicate Basics"
 	shipyard "Megaparsec Basics"
-	shipyard "Lightspeed Ships"
+	shipyard "Lightspeed"
 	outfitter "Common Outfits"
 	outfitter "Ammo North"
 	outfitter "Syndicate Basics"
@@ -182,9 +237,24 @@ phrase "friendly lightspeed"
 	word
 		"Efficiency, Security, Reliability:"
 	word
-		"That's the Lightspeed Logistics Solutions motto.
-		"These are the values that LLS swear by, and the qualities you can be assured of."
-		"Hire Lightspeed Logistics and you know what you'll get."
+		" That's the Lightspeed Logistics Solutions motto.
+		" These are the values that LLS swear by, and the qualities you can be assured of."
+		" Hire Lightspeed Logistics and you know what you'll get."
+
+phrase "friendly lightspeed"
+	word
+		"Want to work with us?"
+		"Interested in earning what you're really worth?"
+		"Do you excel at delivering on tight schedules and blasting the occasional pirate?"
+		"Tired of being an interstellar pizza delivery boy?"
+		"Tired of working in the slow lane?"
+	word
+		" Head to our headquarters in Scheat and apply for a Lightspeed contractor's license."
+		" Visit us in Scheat to join the team and start your path towards living the good life."
+		" Lightspeed Logistics Solutions is now hiring independent captains with fast, sturdy ships; inquire at our HQ in Scheat for further details."
+		" Speed on over to Scheat for the time of your life."
+		" Our headquarters will knock you head-over-heels.  Visit Scheat today!"
+		" If you can fly, you can fly Lightspeed! Lightspeed Logistic Solutions!"
 
 phrase "friendly lightspeed elite"
 	word
@@ -197,10 +267,31 @@ phrase "friendly lightspeed elite"
 phrase "friendly lightspeed elite"
 	word
 		"Get a load of the"
+		"Feast your eyes upon the"
 		"You can always depend on the"
 	word
+		" snazzy upgraded courier ships we use."
+		" payments we get for easy jobs."
+		" afterburners we've got. Slick, aren't they?"
 		" enhanced guns on this thing."
 		" up-armored hull we're sporting."
+		" crazy insurance premiums that come with our line of work."
+
+phrase "friendly lightspeed elite"
+	word
+		"Lightspeed Elite Couriers needs YOU."
+		"Want to work with us?"
+		"Interested in earning what you're really worth?"
+		"Do you excel at delivering on tight schedules and blasting the occasional pirate?"
+		"Tired of being an interstellar pizza delivery boy?"
+		"Tired of working in the slow lane?"
+	word
+		" Head to our headquarters in Scheat and apply for a Lightspeed contractor's license."
+		" Visit us in Scheat to join the team and start your path towards living the good life."
+		" Lightspeed Logistics Solutions is now hiring independent captains with fast, sturdy ships; inquire at our HQ in Scheat for further details."
+		" Speed on over to Scheat for the time of your life."
+		" Our headquarters will knock you head-over-heels.  Visit Scheat today!"
+		" If you can fly, you can fly Lightspeed! Lightspeed Logistic Solutions!"
 
 government "LLS"
 	"display name" "Lightspeed Logistics Solutions"
@@ -516,3 +607,4 @@ mission "LLS Standard [high value, bulk]"
 			distance 5
 		fleet
 			"pirate raid" 3
+			
