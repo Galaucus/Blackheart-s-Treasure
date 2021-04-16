@@ -1,37 +1,111 @@
+system Scheat
+	pos -205 233
+	government Syndicate
+	attributes "core"
+	habitable 625
+	belt 1536
+	haze _menu/haze-133
+	link Markab
+	link "Delta Capricorni"
+	link "Al Dhanab"
+	link Mirach
+	link Matar
+	asteroids "large metal" 1 5.0547
+	trade Clothing 279
+	trade Electronics 757
+	trade Equipment 474
+	trade Food 434
+	trade "Heavy Metals" 780
+	trade Industrial 623
+	trade "Luxury Goods" 1036
+	trade Medical 573
+	trade Metal 259
+	trade Plastic 312
+	fleet "Small Core Merchants" 500
+	fleet "Large Core Merchants" 600
+	fleet "Small Syndicate" 1000
+	fleet "Large Syndicate" 2000
+	fleet "Republic Logistics" 4700
+	fleet "Small Core Pirates" 3000
+	fleet "Large Core Pirates" 5000
+	object
+		sprite star/g5
+		period 10
+	object
+		sprite planet/desert10
+		distance 212.61
+		period 49.6016
+	object Delve
+		sprite planet/ice2
+		distance 559.62
+		period 211.817
+	object "Lightspeed Logistics HQ"
+		sprite planet/station11
+		distance 575
+		period 220		
+	object
+		sprite planet/cloud1
+		distance 1194.87
+		period 660.847
+		object
+			sprite planet/dust0-b
+			distance 173
+			period 17.2679
+	object
+		sprite planet/gas0
+		distance 2229.12
+		period 1683.91
+		object "Charybdis Station"
+			sprite planet/station17
+			distance 281
+			period 13.1034
+	
+planet "Lightspeed Logistics HQ"
+	attributes syndicate station capitol
+	landscape land/corporate0
+	description `WIP`
+	spaceport `WIP`
+	shipyard "Syndicate Basics"
+	shipyard "Megaparsec Basics"
+	shipyard "Lightspeed Ships"
+	outfitter "Common Outfits"
+	outfitter "Ammo North"
+	outfitter "Syndicate Basics"
+	outfitter "Lovelace Basics"
 
 trade
 	commodity "Low Value, Single Item"
-		"safety packaging with a data drive"
-		"safety packaging with a file folder"
-		"safety packaging with a sealed letter"
+		"a data drive"
+		"a file folder"
+		"a sealed letter"
 		"personal effects"
 		"care package contents"
-		"safety packaging with an organ for transplant"
-		"safety packaging with an anniversary gift"
-		"safety packaging with a bottle of 2860 merlot"
+		"an organ for transplant"
+		"an anniversary gift"
+		"a bottle of 2860 merlot"
 		"paperwork"
 	commodity "High Value, Single Item"
-		"safety packaging with a luminary's brain in a jar"
-		"safety packaging with a saint's bejeweled bone"
-		"safety packaging with a precious family heirloom"
-		"safety packaging with a legendary musician's instrument"
-		"safety packaging with a cryogenically-preserved billionaire"
-		"safety packaging with a proto-AGI's neural core"
-		"safety packaging with a single steel briefcase which has been welded shut"
-		"safety packaging with a 23rd century supercar"
-		"safety packaging with a data drive"
-		"safety packaging with a file folder"
-		"safety packaging with a sealed letter"
-		"safety packaging with a solid gold commode"
-		"safety packaging with a monkey's paw sporting two extended digits"
-		"safety packaging with a poker chip"
-		"safety packaging with an antique coin"
-		"safety packaging with a jenga tower in a grav-stasis chamber"
-		"safety packaging with an embalmed corpse"
-		"safety packaging with a book bound in human skin"
-		"safety packaging with a dinosaur skull"
-		"safety packaging with a bottle of 2859 merlot"
-		"safety packaging with a 20th century animation still"
+		"a luminary's brain in a jar"
+		"a saint's bejeweled bone"
+		"a precious family heirloom"
+		"a legendary musician's instrument"
+		"a cryogenically-preserved billionaire"
+		"a proto-AGI's neural core"
+		"a single steel briefcase which has been welded shut"
+		"a 23rd century supercar"
+		"a data drive"
+		"a file folder"
+		"a sealed letter"
+		"a solid gold commode"
+		"a monkey's paw sporting two extended digits"
+		"a poker chip"
+		"an antique coin"
+		"a jenga tower in a grav-stasis chamber"
+		"an embalmed corpse"
+		"a book bound in human skin"
+		"a dinosaur skull"
+		"a bottle of 2859 merlot"
+		"a 20th century animation still"
 	commodity "High Value, Low Volume"
 		"family heirlooms"
 		"diamonds"
@@ -165,7 +239,7 @@ mission "LLS Long-haul [low value]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task."
+	description "A client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task."
 	cargo "Low Value, Single Item" 1
 	to offer
 		random < 90
@@ -216,7 +290,7 @@ mission "LLS Long-haul [high value, single]"
 	job
 	repeat
 	deadline 1 1.4
-	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Single Item" 1
 	to offer
 		random < 90
@@ -252,7 +326,7 @@ mission "LLS Long-haul [high value, volume]"
 	job
 	repeat
 	deadline 1 1.5
-	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Low Volume" 10 2 .1
 	to offer
 		random < 90
@@ -288,7 +362,7 @@ mission "LLS Long-haul [high value, bulk]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Bulk" 25 2 .05
 	to offer
 		random < 90
@@ -332,7 +406,7 @@ mission "LLS Standard [high value, single]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Single Item" 1
 	to offer
 		random < 90
@@ -368,7 +442,7 @@ mission "LLS Standard [high value, volume]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Low Volume" 10 2 .1
 	to offer
 		random < 90
@@ -404,7 +478,7 @@ mission "LLS Standard [high value, bulk]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Bulk" 25 2 .05
 	to offer
 		random < 90
