@@ -221,6 +221,7 @@ trade
 		"ground-to-space missiles"
 		"high-resolution holoemitters"
 		"paperwork"
+		"GPUs"
 
 phrase "lightspeed low value item delivery"
 
