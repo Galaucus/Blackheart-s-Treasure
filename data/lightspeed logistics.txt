@@ -1,3 +1,38 @@
+government "Syndicate"
+	"attitude toward"
+		"Lightspeed" .04
+
+government "Lightspeed"
+	swizzle 1
+	color 144 144 255 1
+	"player reputation" 1
+	"attitude toward"
+		"Syndicate" .04
+		"Pirate" -.04
+		"Cartel" .08
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly lightspeed"
+	"hostile hail" "hostile lightspeed"
+
+government "Cartel"
+	swizzle 6
+	color .78 0 0
+	
+	"player reputation" 0
+	"attitude toward"
+		"Author" -.01
+		"Korath" -.01
+		"Merchant" 0
+		"Pirate" -.01
+		"Syndicate" -.01
+		"Lightspeed" .08
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly pirate"
+	"hostile hail" "hostile pirate"
+	raid "pirate raid"
+
 ship "Merchantman"
 	sprite "ship/freighter"
 	thumbnail "thumbnail/freighter"
@@ -35,6 +70,23 @@ ship "Merchantman"
 		"X2200 Ion Steering"
 		"Scram Drive"
 		
+ship "Quicksilver" "Quicksilver (Long-haul)"
+	outfits
+		"Javelin Pod" 2
+		"Javelin Storage Crate"
+		Javelin 500
+		"RT-I Radiothermal"
+		"LP036a Battery Pack"
+		"Cooling Ducts"
+		"D41-HY Shield Generator"
+		"Fuel Pod" 4
+		Hyperdrive
+		"Greyhound Plasma Thruster"		
+		"X1200 Ion Steering"
+		"X2200 Ion Steering"
+	gun "Javelin Pod"
+	gun "Javelin Pod"
+		
 	engine -7.5 92
 	engine 7.5 92
 	turret 0 -64 "Anti-Missile Turret"
@@ -53,67 +105,309 @@ ship "Merchantman"
 shipyard Lightspeed
 	Merchantman
 
-system Scheat
-	pos -205 233
-	government Syndicate
-	attributes "core"
-	habitable 625
-	belt 1536
-	haze _menu/haze-133
-	link Markab
-	link "Delta Capricorni"
-	link "Al Dhanab"
-	link Mirach
-	link Matar
-	asteroids "large metal" 1 5.0547
-	trade Clothing 279
-	trade Electronics 757
-	trade Equipment 474
-	trade Food 434
-	trade "Heavy Metals" 780
-	trade Industrial 623
-	trade "Luxury Goods" 1036
-	trade Medical 573
-	trade Metal 259
-	trade Plastic 312
-	fleet "Small Core Merchants" 500
-	fleet "Large Core Merchants" 600
-	fleet "Small Syndicate" 1000
-	fleet "Large Syndicate" 2000
-	fleet "Republic Logistics" 4700
-	fleet "Small Core Pirates" 3000
-	fleet "Large Core Pirates" 5000
-	object
-		sprite star/g5
-		period 10
-	object
-		sprite planet/desert10
-		distance 212.61
-		period 49.6016
-	object Delve
-		sprite planet/ice2
-		distance 559.62
-		period 211.817
-	object "Lightspeed Logistics HQ"
-		sprite planet/station11
-		distance 575
-		period 220		
-	object
-		sprite planet/cloud1
-		distance 1194.87
-		period 660.847
-		object
-			sprite planet/dust0-b
-			distance 173
-			period 17.2679
-	object
-		sprite planet/gas0
-		distance 2229.12
-		period 1683.91
-		object "Charybdis Station"
-			sprite planet/station17
-			distance 281
-			period 13.1034
+fleet "Small Lightspeed"
+	government "Lightspeed"
+	names "Lightspeed"
+	cargo 2
+	personality
+		confusion 30
+		timid frugal appeasing
+	variant 100
+		"Cargo Drone (Hyperdrive)"
+	variant 40
+		"Star Barge"
+	variant 60
+		"Star Barge (Armed)"
+	variant 30
+		"Freighter"
+	variant 10
+		"Freighter (Fancy)"
+	variant 10
+		"Freighter (Proton)"
+	variant 10
+		"Freighter"
+		"Wasp"
+	variant 20
+		"Freighter" 2
+		"Star Barge (Armed)" 2
+	variant 20
+		"Merchantman"
+		"Bounder" 2
+		"Quicksilver (Long-haul)"
+	variant 50
+		"Bounder (Escort)"
+	variant 30
+		"Bounder"
+		"Wasp"
+	variant 10
+		"Freighter"
+		"Wasp" 2
+	variant 1
+		"Mule"
+		"Dagger"
+	variant 1
+		"Mule (Heavy)"
+		"Dagger"
+	variant 3
+		"Argosy"
+	variant 2
+		"Argosy (Blaster)"
+	variant 2
+		"Argosy (Laser)"
+	variant 2
+		"Argosy (Proton)"
+	variant 2
+		"Argosy (Turret)"
+	variant 2
+		"Argosy (Missile)"
+	variant 5
+		"Heavy Shuttle"
+	variant 3
+		"Heavy Shuttle (Armed)"
+	variant 1
+		"Flivver (Luxury)"
+	variant 1
+		"Flivver (Racing)"
+	variant 2
+		"Scout"
+	variant 1
+		"Scout (Speedy)"
+
+fleet "Large Lightspeed"
+	government "Lightspeed"
+	names "lightspeed"
+	cargo 4
+	personality
+		confusion 20
+		timid frugal appeasing
+	variant 30
+		"Freighter" 2
+		"Quicksilver" 2
+	variant 10
+		"Freighter (Fancy)" 2
+	variant 10
+		"Freighter (Proton)" 2
+		"Quicksilver" 2
+	variant 50
+		"Bulk Freighter"
+		"Wasp (Proton)" 2
+	variant 50
+		"Bulk Freighter"
+		"Wasp"
+		"Wasp (Meteor)"
+	variant 20
+		"Bulk Freighter (Blaster)"
+		"Wasp" 2
+	variant 10
+		"Bulk Freighter (Heavy)"
+		"Wasp (Proton)" 2
+	variant 10
+		"Bulk Freighter (Proton)"
+		"Wasp (Proton)" 2
+	variant 10
+		"Bulk Freighter (Proton)"
+		"Wasp"
+		"Wasp (Meteor)"
+	variant 20
+		"Bulk Freighter"
+	variant 10
+		"Bulk Freighter (Blaster)"
+	variant 5
+		"Bulk Freighter (Heavy)"
+	variant 5
+		"Bulk Freighter (Proton)"
+	variant 20
+		"Star Barge (Armed)" 3
+	variant 10
+		"Bulk Freighter" 2
+		"Quicksilver" 1
+		"Splinter" 1
+	variant 4
+		"Bulk Freighter (Blaster)"
+		"Bulk Freighter (Heavy)"
+		"Quicksilver" 1
+		"Splinter (Laser)" 1
+	variant 4
+		"Bulk Freighter (Blaster)"
+		"Bulk Freighter (Proton)"
+		"Quicksilver" 1
+		"Splinter (Proton)" 1
+	variant 10
+		"Freighter" 4
+		"Quicksilver" 2
+		"Splinter" 1
+	variant 3
+		"Freighter" 4
+		"Quicksilver" 2
+		"Splinter (Laser)" 1
+	variant 3
+		"Freighter" 4
+		"Quicksilver" 2
+		"Splinter (Proton)" 1
+	variant 10
+		"Freighter" 4
+		"Protector" 1
+	variant 2
+		"Freighter" 4
+		"Protector (Laser)" 1
+	variant 2
+		"Freighter" 4
+		"Protector (Proton)" 1
+	variant 10
+		"Bulk Freighter" 2
+		"Protector" 1
+	variant 10
+		"Bulk Freighter" 2
+		"Wasp" 3
+		"Wasp (Meteor)" 2
+	variant 10
+		"Bulk Freighter" 2
+		"Vanguard" 1
+	variant 1
+		"Bulk Freighter (Heavy)" 2
+		"Protector (Laser)" 1
+	variant 1
+		"Bulk Freighter (Proton)" 2
+		"Protector (Proton)" 1
+	variant 1
+		"Bulk Freighter (Heavy)" 2
+		"Vanguard (Particle)" 1
+	variant 1
+		"Bulk Freighter (Heavy)" 2
+		"Vanguard (Missile)" 1
+	variant 20
+		"Bounder"
+		"Quicksilver" 2
+	variant 5
+		"Arrow"
+		"Wasp (Proton)" 2
+	variant 2
+		"Arrow"
+		
+fleet "Elite Lightspeed"
+	government "Lightspeed"
+	names "Lightspeed"
+	cargo 2
+	variant 1
+		"Merchantman" 2
+	variant 1
+		"Vanguard"
+		
+		
+fleet "Small Cartel"
+	government "Cartel"
+	names "pirate"
+	cargo 1
+	personality
+		disables plunders harvests
+		confusion 20
+	variant 3
+		"Quicksilver"
+	variant 3
+		"Quicksilver (Proton)"
+	variant 2
+		"Sparrow"
+	variant 3
+		"Hawk"
+	variant 2
+		"Hawk (Rocket)"
+	variant 2
+		"Hawk (Speedy)"
+	variant 1
+		"Headhunter"
+	variant 1
+		"Headhunter (Particle)"
+	variant 1
+		"Quicksilver" 2
+	variant 1
+		"Quicksilver"
+		"Quicksilver (Proton)"
+	variant 1
+		"Quicksilver (Proton)" 2
+	variant 2
+		"Wasp (Gatling)"
+	variant 3
+		"Wasp (Javelin)"
+	variant 8
+		"Wasp (Meteor)"
+	variant 2
+		"Wasp (Plasma)"
+	variant 2
+		"Wasp (Proton)"
+
+fleet "Large Cartel"
+	government "Cartel"
+	names "pirate"
+	cargo 1
+	personality
+		plunders harvests
+	variant 5
+		"Quicksilver (Proton)" 3
+	variant 2
+		"Quicksilver" 3
+	variant 3
+		"Splinter"
+		"Quicksilver (Proton)"
+	variant 3
+		"Splinter (Laser)"
+		"Quicksilver"
+	variant 2
+		"Hawk (Bomber)"
+		"Quicksilver" 2
+	variant 1
+		"Fury (Heavy)"
+		"Splinter"
+	variant 2
+		"Hawk (Bomber)"
+		"Quicksilver (Proton)" 2
+	variant 3
+		"Fury (Bomber)"
+		"Quicksilver" 2
+	variant 3
+		"Fury (Bomber)"
+		"Quicksilver (Proton)" 2
+	variant 2
+		"Headhunter (Strike)"
+		"Quicksilver" 2
+	variant 3
+		"Splinter (Proton)"
+		"Quicksilver"
+	variant 4
+		"Manta (Proton)"
+	variant 2
+		"Manta"
+	variant 2
+		"Splinter" 2
+	variant 1
+		"Splinter (Laser)" 2
+	variant 1
+		"Splinter (Proton)" 2
+	variant 2
+		"Falcon"
+	variant 1
+		"Falcon (Heavy)"
+	variant 1
+		"Falcon (Laser)"
+	variant 2
+		"Firebird"
+	variant 2
+		"Firebird (Laser)"
+	variant 1
+		"Firebird (Plasma)"
+	variant 1
+		"Firebird (Missile)"
+	variant 1
+		"Vanguard (Particle)"
+	variant 1
+		"Vanguard (Missile)"
+	variant 1
+		"Vanguard"
+	variant 1
+		"Protector (Laser)"
+	variant 1
+		"Protector (Proton)"
+	variant 1
+		"Protector"
 	
 planet "Lightspeed Logistics HQ"
 	attributes syndicate station capitol
@@ -196,12 +490,13 @@ trade
 		"cash"
 		"black printer ink"
 		"uranium"
+		"plutonium"
 		"horseshoe crab blood"
 		"lysergic acid diethylamide"
 		"scorpion venom"
 		"luxury agravs"
 		"high-density shield emitters"
-		"proto-AGI mainframe"
+		"proto-AGI mainframes"
 		"RAM (8-terabyte sticks)"
 		"exobyte micro-cards"
 		"weapons components"
@@ -238,7 +533,7 @@ phrase "friendly lightspeed"
 	word
 		"Efficiency, Security, Reliability:"
 	word
-		" That's the Lightspeed Logistics Solutions motto.
+		" That's the Lightspeed Logistics motto."
 		" These are the values that LLS swear by, and the qualities you can be assured of."
 		" Hire Lightspeed Logistics and you know what you'll get."
 
@@ -252,7 +547,7 @@ phrase "friendly lightspeed"
 	word
 		" Head to our headquarters in Scheat and apply for a Lightspeed contractor's license."
 		" Visit us in Scheat to join the team and start your path towards living the good life."
-		" Lightspeed Logistics Solutions is now hiring independent captains with fast, sturdy ships; inquire at our HQ in Scheat for further details."
+		" Lightspeed Logistics is now hiring independent captains with fast, sturdy ships; inquire at our HQ in Scheat for further details."
 		" Speed on over to Scheat for the time of your life."
 		" Our headquarters will knock you head-over-heels.  Visit Scheat today!"
 		" If you can fly, you can fly Lightspeed! Lightspeed Logistic Solutions!"
@@ -261,7 +556,7 @@ phrase "friendly lightspeed elite"
 	word
 		"Efficiency, Security, Reliability:"
 	word
-		" That's the Lightspeed Logistics Solutions motto.
+		" That's the Lightspeed Logistics motto."
 		" These are the values that LLS swear by, and the qualities you can be assured of."
 		" Hire Lightspeed Logistics and you know what you'll get."
 		
@@ -289,26 +584,10 @@ phrase "friendly lightspeed elite"
 	word
 		" Head to our headquarters in Scheat and apply for a Lightspeed contractor's license."
 		" Visit us in Scheat to join the team and start your path towards living the good life."
-		" Lightspeed Logistics Solutions is now hiring independent captains with fast, sturdy ships; inquire at our HQ in Scheat for further details."
+		" Lightspeed Logistics is now hiring independent captains with fast, sturdy ships; inquire at our HQ in Scheat for further details."
 		" Speed on over to Scheat for the time of your life."
 		" Our headquarters will knock you head-over-heels.  Visit Scheat today!"
 		" If you can fly, you can fly Lightspeed! Lightspeed Logistic Solutions!"
-
-government "LLS"
-	"display name" "Lightspeed Logistics Solutions"
-	swizzle 1
-	
-	"player reputation" 10
-	"attitude toward"
-		"LLS Elite" 1
-		"Pirate" -.2
-		"Korath" -.2
-		"Syndicate" .1
-		"Merchant" .2
-	"bribe" .05
-	"fine" 0
-	"friendly hail" "friendly lightspeed"
-	"hostile hail" "hostile lightspeed"
 
 government "LLS Elite"
 	"display name" "Lightspeed Logistics Solutions"

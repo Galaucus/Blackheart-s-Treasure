@@ -11439,7 +11439,7 @@ system Gerenus
 
 system Gienah
 	pos -176 354
-	government Pirate
+	government Cartel
 	attributes "core"
 	habitable 534.375
 	belt 1939
@@ -11464,8 +11464,9 @@ system Gienah
 	trade Medical 600
 	trade Metal 245
 	trade Plastic 460
-	fleet "Small Core Pirates" 500
-	fleet "Large Core Pirates" 800
+	fleet "Small Cartel" 500
+	fleet "Large Cartel" 800
+	fleet "Elite Lightspeed" 5000
 	fleet "Large Syndicate" 5000
 	object
 		sprite star/k5-old
@@ -21893,6 +21894,10 @@ system Scheat
 		sprite planet/ice2
 		distance 559.62
 		period 211.817
+	object "Lightspeed Logistics HQ"
+		sprite planet/station11
+		distance 575
+		period 220		
 	object
 		sprite planet/cloud1
 		distance 1194.87
@@ -28600,6 +28605,7 @@ planet Mutiny
 	attributes pirate
 	landscape land/badlands8
 	description `Centuries ago, Mutiny was used as a sort of prison world for a powerful band of pirates, a place where rivals could be marooned or held for ransom, rather than killing them outright. It is a cold, dark planet, and food is scarce, but over time several villages developed in the more hospitable regions. No longer prisoners, the inhabitants who remain do so because they prefer a simple life beyond the reach of any government, on a planet that will never be stolen from them because it carries nothing of value.`
+	government Pirate
 	security 0
 
 planet Mystery
