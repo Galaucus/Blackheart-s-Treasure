@@ -33,9 +33,43 @@ government "Cartel"
 	"hostile hail" "hostile pirate"
 	raid "pirate raid"
 
+ship "Cargo Drone"
+	sprite "ship/combat drone"
+	thumbnail "thumbnail/combat drone"
+	attributes
+		category "Drone"
+		"cost" 53000
+		"hull" 150
+		"automaton" 1
+		"mass" 14
+		"drag" .59
+		"heat dissipation" .9
+		"fuel capacity" 300
+		"cargo space" 20
+		"outfit space" 54
+		"engine capacity" 20
+		weapon
+			"blast radius" 2
+			"shield damage" 30
+			"hull damage" 15
+			"hit force" 55
+	outfits		
+		"KP-6 Photovoltaic Panel" 2
+		"LP036a Battery Pack"
+		
+		"X1050 Ion Engines"
+		
+	engine -9 29
+	engine 9 29
+	explode "tiny explosion" 12
+	description `Cargo drones are the inevitable result of finding an answer to the question "How can we move modest amounts of cargo at minimal cost?" Consisting of little more than a frame, control computer, a cargo container, solar collection panels and a drive unit, more or less the only flexibility in this minimalistic design is that the designers left enough room to precariously bolt on a hyperdrive.`
+	description "Almost hilariously vulnerable to piracy, cargo drones are seldom deployed solo, instead gathering in gaggles to follow a control ship like ducklings after their mother."
+
 ship "Merchantman"
 	sprite "ship/freighter"
 	thumbnail "thumbnail/freighter"
+	licenses
+		Lightspeed
 	attributes
 		category "Light Freighter"
 		"cost" 960000
@@ -70,6 +104,21 @@ ship "Merchantman"
 		"X2200 Ion Steering"
 		"Scram Drive"
 		
+	engine -7.5 92
+	engine 7.5 92
+	turret 0 -64 "Anti-Missile Turret"
+	turret 0 -4.5 "Anti-Missile Turret"
+	turret 0 64.5 "Quad Blaster Turret"
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion small"
+	description "The Freighter is designed by the Syndicate to be an efficient means of carrying cargo from system to system, but is so slow and difficult to land that most pilots hate flying them - not to mention it renders them sitting ducks if unescorted."
+	description "	That simply wouldn't do for Lightspeed Logistics Solutions, who decided the most economical way to keep their fleets safe but efficient was to design an aftermarket upgrade package for the standard freighter. Implemented in a specialized shipyard adjoined to their headquarters, the Merchantman upgrade adds more speed, more gun, and more armor to an otherwise unthreatening vessel. While you certainly wouldn't want to fly one into battle, these vessels are now more than capable of safely running away from one."
+	description "	Key modifications to the hull include a reduction in living quarters and cargo space in order to make room for increased fuel reserves and the increased space needed by the ship's engines and weapons. Armor plating has also been fastened stood-off from the hull, the better to absorb impacts without risking the integrity of precious cargo."
+		
 ship "Quicksilver" "Quicksilver (Long-haul)"
 	outfits
 		"Javelin Pod" 2
@@ -86,21 +135,14 @@ ship "Quicksilver" "Quicksilver (Long-haul)"
 		"X2200 Ion Steering"
 	gun "Javelin Pod"
 	gun "Javelin Pod"
+	
+ship "Cargo Drone" "Cargo Drone (Hyperdrive)"
+	outfits		
+		"KP-6 Photovoltaic Panel" 2
+		"LP036a Battery Pack"
 		
-	engine -7.5 92
-	engine 7.5 92
-	turret 0 -64 "Anti-Missile Turret"
-	turret 0 -4.5 "Anti-Missile Turret"
-	turret 0 64.5 "Quad Blaster Turret"
-	leak "leak" 60 50
-	leak "flame" 50 80
-	explode "tiny explosion" 10
-	explode "small explosion" 30
-	explode "medium explosion" 20
-	"final explode" "final explosion small"
-	description "The Freighter is designed by the Syndicate to be an efficient means of carrying cargo from system to system, but is so slow and difficult to land that most pilots hate flying them - not to mention it renders them sitting ducks if unescorted."
-	description "	That simply wouldn't do for Lightspeed Logistics Solutions, who decided the most economical way to keep their fleets safe but efficient was to design an aftermarket upgrade package for the standard freighter. Implemented in a specialized shipyard adjoined to their headquarters, the Merchantman upgrade adds more speed, more gun, and more armor to an otherwise unthreatening vessel. While you certainly wouldn't want to fly one into battle, these vessels are now more than capable of safely running away from one."
-	description "	Key modifications to the hull include a reduction in living quarters and cargo space in order to make room for increased fuel reserves and the increased space needed by the ship's engines and weapons. Armor plating has also been fastened stood-off from the hull, the better to absorb impacts without risking the integrity of precious cargo."
+		"X1050 Ion Engines"
+		Hyperdrive
 
 shipyard Lightspeed
 	Merchantman
