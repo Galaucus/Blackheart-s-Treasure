@@ -118,6 +118,65 @@ ship "Merchantman"
 	description "The Freighter is designed by the Syndicate to be an efficient means of carrying cargo from system to system, but is so slow and difficult to land that most pilots hate flying them - not to mention it renders them sitting ducks if unescorted."
 	description "	That simply wouldn't do for Lightspeed Logistics Solutions, who decided the most economical way to keep their fleets safe but efficient was to design an aftermarket upgrade package for the standard freighter. Implemented in a specialized shipyard adjoined to their headquarters, the Merchantman upgrade adds more speed, more gun, and more armor to an otherwise unthreatening vessel. While you certainly wouldn't want to fly one into battle, these vessels are now more than capable of safely running away from one."
 	description "	Key modifications to the hull include a reduction in living quarters and cargo space in order to make room for increased fuel reserves and the increased space needed by the ship's engines and weapons. Armor plating has also been fastened stood-off from the hull, the better to absorb impacts without risking the integrity of precious cargo."
+	
+ship "Junk"
+
+ship "Galleon"
+	sprite "ship/bulk freighter"
+	thumbnail "thumbnail/bulk freighter"
+	attributes
+		category "Heavy Freighter"
+		"cost" 12200000
+		"shields" 6000
+		"hull" 8200
+		"required crew" 6
+		"bunks" 18
+		"mass" 910
+		"drag" 15.2
+		"heat dissipation" .5
+		"fuel capacity" 1100
+		"cargo space" 400
+		"outfit space" 475
+		"weapon capacity" 220
+		"engine capacity" 96
+		weapon
+			"blast radius" 120
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Sidewinder Missile Launcher" 2
+		"Sidewinder Missile" 90
+		"Laser Turret" 3
+		"Heavy Anti-Missile Turret" 2
+		
+		"RT-I Radiothermal"
+		"LP144a Battery Pack"
+		"D23-QP Shield Generator"
+		"Laser Rifle"
+		
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Scram Drive"
+		
+	engine -20 195.5
+	engine 20 195.5
+	gun -23.5 -182 "Sidewinder Missile Launcher"
+	gun 23.5 -182 "Sidewinder Missile Launcher"
+	turret 0 -90.5 "Laser Turret"
+	turret 0 -40.5 "Heavy Anti-Missile Turret"
+	turret 0 9.5 "Laser Turret"
+	turret 0 59.5 "Heavy Anti-Missile Turret"
+	turret 0 109 "Laser Turret"
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description "The Bulk Freighter is the ultimate cargo ship, able to carry as much cargo as four ordinary Syndicate Freighters. It is also, however, an incredibly slow ship and difficult to maneuver, especially when loaded down with cargo. Some freight caravans use ordinary freighters instead of bulk freighters just to avoid the hassle of constantly having to wait for the Bulk Freighter to properly align itself for hyperspace travel."
 		
 ship "Quicksilver" "Quicksilver (Long-haul)"
 	outfits
@@ -154,8 +213,16 @@ fleet "Small Lightspeed"
 	personality
 		confusion 30
 		timid frugal appeasing
-	variant 100
+	variant 50
 		"Cargo Drone (Hyperdrive)"
+	variant 50
+		"Cargo Drone (Hyperdrive)" 3
+	variant 10
+		"Freighter"
+		"Cargo Drone (Hyperdrive)" 6
+	variant 10
+		"Wasp"
+		"Cargo Drone (Hyperdrive)" 6
 	variant 40
 		"Star Barge"
 	variant 60
@@ -184,36 +251,27 @@ fleet "Small Lightspeed"
 	variant 10
 		"Freighter"
 		"Wasp" 2
+	variant 6
+		"Junk"
+		"Cargo Drone"
+		"Combat Drone"
+	variant 6
+		"Junk"
+		"Cargo Drone" 2
+	variant 6
+		"Junk"
+		"Combat Drone" 2	
 	variant 1
-		"Mule"
-		"Dagger"
-	variant 1
-		"Mule (Heavy)"
-		"Dagger"
-	variant 3
-		"Argosy"
-	variant 2
-		"Argosy (Blaster)"
-	variant 2
-		"Argosy (Laser)"
-	variant 2
-		"Argosy (Proton)"
-	variant 2
-		"Argosy (Turret)"
-	variant 2
-		"Argosy (Missile)"
-	variant 5
-		"Heavy Shuttle"
-	variant 3
-		"Heavy Shuttle (Armed)"
-	variant 1
-		"Flivver (Luxury)"
-	variant 1
-		"Flivver (Racing)"
-	variant 2
-		"Scout"
-	variant 1
-		"Scout (Speedy)"
+		"Junk" 2
+		"Cargo Drone" 2
+		"Combat Drone" 2
+	variant 60
+		"Merchantman"
+	variant 10
+		"Galleon"
+		"Cargo Drone"
+	variant 15
+		"Bounder"
 
 fleet "Large Lightspeed"
 	government "Lightspeed"
@@ -320,11 +378,16 @@ fleet "Large Lightspeed"
 	variant 20
 		"Bounder"
 		"Quicksilver" 2
-	variant 5
-		"Arrow"
+	variant 10
+		"Galleon"
+		"Cargo Drone"
 		"Wasp (Proton)" 2
-	variant 2
-		"Arrow"
+	variant 10
+		"Galleon" 2
+		"Cargo Drone" 2
+		"Wasp" 2
+		"Wasp (Proton)" 2
+		"Wasp (Meteor)" 2
 		
 fleet "Elite Lightspeed"
 	government "Lightspeed"
