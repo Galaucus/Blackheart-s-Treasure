@@ -612,7 +612,7 @@ fleet "Large Cartel"
 planet "Lightspeed Logistics HQ"
 	attributes syndicate station capitol
 	landscape land/corporate0
-	description `The headquarters of Lightspeed Logistic Solutions appear architecturally disjointed, two incongruous designs welded together into a functional, if aesthetically incompatible station-hull. One side of the station is a massive shipment processing center, drab, utilitarian, and boasting a constant stream of cargo vessels coming and going. The other half, hosting corporate administration and headquarters, is the sort of fever-dream construction only available to spaceborne architects: soaring, gleaming structures built more for function than form, and clearly designed to impress upon any looking the importance of whatever business may happen within. Gone here are the swarms of freighters that throng the processing center, replaced instead by luxury shuttles that flit between small hangars studding the twisted, gleaming towers.`
+	description `The headquarters of Lightspeed Logistic Solutions appear architecturally disjointed, two incongruous designs welded together into a functional, if aesthetically incompatible station-hull. One side of the station is a massive shipment processing center, drab, utilitarian, and boasting a constant stream of cargo vessels coming and going. The other half, hosting corporate administration and headquarters, is the sort of fever-dream construction only available to spaceborne architects: soaring, gleaming structures built more for function than form, and clearly designed to impress upon any onlookers the importance of whatever business may happen within. Gone here are the swarms of freighters and cargo drones that throng the processing center, replaced instead by luxury shuttles that flit between small hangars studding the twisted, gleaming towers.`
 	spaceport `WIP`
 	shipyard "Lightspeed"
 	outfitter "Common Outfits"
@@ -864,10 +864,11 @@ mission "LLS Long-haul [high value, single]"
 	cargo "High Value, Single Item" 1
 	to offer
 		random < 90
+		has "license: LLS Contractor"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 2 8
+		distance 8 12
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	on visit
 		dialog phrase "generic cargo on visit"
@@ -900,6 +901,7 @@ mission "LLS Long-haul [high value, volume]"
 	cargo "High Value, Low Volume" 10 2 .1
 	to offer
 		random < 90
+		has "license: LLS Contractor"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
@@ -936,6 +938,7 @@ mission "LLS Long-haul [high value, bulk]"
 	cargo "High Value, Bulk" 25 2 .05
 	to offer
 		random < 90
+		has "license: LLS Contractor"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
@@ -980,10 +983,11 @@ mission "LLS Standard [high value, single]"
 	cargo "High Value, Single Item" 1
 	to offer
 		random < 90
+		has "license: LLS Contractor"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 8 12
+		distance 2 8
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	on visit
 		dialog phrase "generic cargo on visit"
@@ -1007,7 +1011,7 @@ mission "LLS Standard [high value, single]"
 		fleet
 			"pirate raid"
 		
-mission "LLS Standard [high value, volume]"
+mission "LLS Standard [high value, low volume]"
 	name "Armored transport to <planet>"
 	job
 	repeat
@@ -1016,10 +1020,11 @@ mission "LLS Standard [high value, volume]"
 	cargo "High Value, Low Volume" 10 2 .1
 	to offer
 		random < 90
+		has "license: LLS Contractor"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 8 12
+		distance 2 8
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	on visit
 		dialog phrase "generic cargo on visit"
@@ -1052,10 +1057,11 @@ mission "LLS Standard [high value, bulk]"
 	cargo "High Value, Bulk" 25 2 .05
 	to offer
 		random < 90
+		has "license: LLS Contractor"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 8 12
+		distance 2 8
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	on visit
 		dialog phrase "generic cargo on visit"
