@@ -33,6 +33,42 @@ government "Cartel"
 	"hostile hail" "hostile pirate"
 	raid "pirate raid"
 
+shipyard Lightspeed
+	Merchantman
+	Fluyt
+	Galleon
+	"Cargo Drone (Lightspeed)"
+	
+shipyard "Syndicate Basics"
+	"Cargo Drone"
+	
+outfitter Lightspeed
+	"LLS Contractor License"
+
+outfit "LLS Contractor License"
+	category "Special"
+	cost 1000000
+	thumbnail "outfit/lightspeed basic license"
+	description "Call it a license. Call it a security deposit. Whichever it is, after shelling out the hefty sum necessary for this certificate, Lightspeed Logistics Solution is now willing to trust you to get their high-value cargoes where they need to be and on time. Lucrative opportunities are now in reach assuming you can meet the tight deadlines associated with working for this corporation."
+
+outfit "Syndicate Control Program"
+	category "Systems"
+	cost 0
+	thumbnail "outfit/code"
+	"maintenance costs" 50
+	"automaton" 1
+	"installable" 0
+	description "Proprietary, licensed software that is costing you 50 credits per day. Uninstalling it will leave whatever drone it's attached to crippled."
+	
+outfit "Lightspeed Control Program"
+	category "Systems"
+	cost 0
+	thumbnail "outfit/code"
+	"maintenance costs" 33
+	"automaton" 1
+	"installable" 0
+	description "Proprietary, licensed software that is costing you 33 credits per day. Uninstalling it will leave whatever drone it's attached to crippled. Rumors that it scans and reports the contents of the drone's cargo bay to Lightspeed Analytics are resolutely denied by the company."
+
 ship "Cargo Drone"
 	sprite "ship/combat drone"
 	thumbnail "thumbnail/combat drone"
@@ -40,7 +76,6 @@ ship "Cargo Drone"
 		category "Drone"
 		"cost" 53000
 		"hull" 150
-		"automaton" 1
 		"mass" 14
 		"drag" .59
 		"heat dissipation" .9
@@ -57,6 +92,8 @@ ship "Cargo Drone"
 		"KP-6 Photovoltaic Panel" 2
 		"LP036a Battery Pack"
 		
+		"Syndicate Control Program"
+		
 		"X1050 Ion Engines"
 		
 	engine -9 29
@@ -68,10 +105,10 @@ ship "Cargo Drone"
 ship "Merchantman"
 	sprite "ship/freighter"
 	thumbnail "thumbnail/freighter"
-	licenses
-		Lightspeed
 	attributes
 		category "Light Freighter"
+		licenses
+			"LLS Contractor"
 		"cost" 960000
 		"shields" 2600
 		"hull" 3000
@@ -119,13 +156,62 @@ ship "Merchantman"
 	description "	That simply wouldn't do for Lightspeed Logistics Solutions, who decided the most economical way to keep their fleets safe but efficient was to design an aftermarket upgrade package for the standard freighter. Implemented in a specialized shipyard adjoined to their headquarters, the Merchantman upgrade adds more speed, more gun, and more armor to an otherwise unthreatening vessel. While you certainly wouldn't want to fly one into battle, these vessels are now more than capable of safely running away from one."
 	description "	Key modifications to the hull include a reduction in living quarters and cargo space in order to make room for increased fuel reserves and the increased space needed by the ship's engines and weapons. Armor plating has also been fastened stood-off from the hull, the better to absorb impacts without risking the integrity of precious cargo."
 	
-ship "Junk"
+ship "Fluyt"
+	sprite "ship/argosy"
+	thumbnail "thumbnail/argosy"
+	attributes
+		category "Light Freighter"
+		licenses
+			"LLS Contractor"
+		"cost" 4435000
+		"shields" 2000
+		"hull" 4700
+		"required crew" 12
+		"bunks" 36
+		"mass" 360
+		"drag" 14.5
+		"heat dissipation" .4
+		"fuel capacity" 800
+		"cargo space" 290
+		"outfit space" 235
+		"weapon capacity" 35
+		"engine capacity" 56
+		weapon
+			"blast radius" 75
+			"shield damage" 600
+			"hull damage" 320
+			"hit force" 930
+		
+	outfits
+		"Proton Turret"
+			
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Scram Drive"
+		
+	engine -25 91 0.6
+	engine -14 91 0.8
+	engine 14 91 0.8
+	engine 25 91 0.6	
+	turret 0 -12.5 "Proton Turret"
+	bay "Drone" -14 80
+	bay "Drone" 14 80
+	leak "leak" 60 50
+	leak "flame" 60 80
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 25
+	explode "large explosion" 10
+	description "As it turns out, long-range exploration vessels from the early days of space travel make for rather good cargo vessels. Harkening from an era where one had to worry more about unmapped spacelanes and less about pirates, the Fluyt sports thick armor, capacious fuel tanks, and a rather pathetic shielding array. Perhaps more notably is the assortment of drone bays, making it a popular option for routine shipping operations where landing is either infeasible or simply not efficient - which happens more often than many captains would like."
+	description "The fluyt is a monumentally sluggish vessel, built far more for endurance and reliability than maneuverability. 
 
 ship "Galleon"
 	sprite "ship/bulk freighter"
 	thumbnail "thumbnail/bulk freighter"
 	attributes
 		category "Heavy Freighter"
+		licenses
+			"LLS Contractor"
 		"cost" 12200000
 		"shields" 6000
 		"hull" 8200
@@ -203,8 +289,17 @@ ship "Cargo Drone" "Cargo Drone (Hyperdrive)"
 		"X1050 Ion Engines"
 		Hyperdrive
 
-shipyard Lightspeed
-	Merchantman
+ship "Cargo Drone" "Cargo Drone (Lightspeed)"
+	attributes
+		licenses
+			"LLS Contractor"
+	outfits		
+		"KP-6 Photovoltaic Panel" 2
+		"LP036a Battery Pack"
+		
+		"Lightspeed Control Program"
+		
+		"X1050 Ion Engines"
 
 fleet "Small Lightspeed"
 	government "Lightspeed"
@@ -252,17 +347,17 @@ fleet "Small Lightspeed"
 		"Freighter"
 		"Wasp" 2
 	variant 6
-		"Junk"
+		"Fluyt"
 		"Cargo Drone"
 		"Combat Drone"
 	variant 6
-		"Junk"
+		"Fluyt"
 		"Cargo Drone" 2
 	variant 6
-		"Junk"
+		"Fluyt"
 		"Combat Drone" 2	
 	variant 1
-		"Junk" 2
+		"Fluyt" 2
 		"Cargo Drone" 2
 		"Combat Drone" 2
 	variant 60
@@ -519,13 +614,12 @@ planet "Lightspeed Logistics HQ"
 	landscape land/corporate0
 	description `The headquarters of Lightspeed Logistic Solutions appear architecturally disjointed, two incongruous designs welded together into a functional, if aesthetically incompatible station-hull. One side of the station is a massive shipment processing center, drab, utilitarian, and boasting a constant stream of cargo vessels coming and going. The other half, hosting corporate administration and headquarters, is the sort of fever-dream construction only available to spaceborne architects: soaring, gleaming structures built more for function than form, and clearly designed to impress upon any looking the importance of whatever business may happen within. Gone here are the swarms of freighters that throng the processing center, replaced instead by luxury shuttles that flit between small hangars studding the twisted, gleaming towers.`
 	spaceport `WIP`
-	shipyard "Syndicate Basics"
-	shipyard "Megaparsec Basics"
 	shipyard "Lightspeed"
 	outfitter "Common Outfits"
 	outfitter "Ammo North"
 	outfitter "Syndicate Basics"
 	outfitter "Lovelace Basics"
+	outfitter "Lightspeed"
 
 trade
 	commodity "Low Value, Single Item"
