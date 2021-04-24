@@ -822,7 +822,7 @@ mission "LLS Long-haul [low value]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment
-		payment 50000
+		payment 75000
 		dialog phrase "lightspeed low value item delivery"
 	npc
 		government "Pirate"
@@ -874,7 +874,7 @@ mission "LLS Long-haul [high value, single]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment
-		payment 20000
+		payment 60000
 		dialog phrase "lightspeed single item delivery"
 	npc
 		government "Pirate"
@@ -897,7 +897,7 @@ mission "LLS Long-haul [high value, volume]"
 	job
 	repeat
 	deadline 1 1.5
-	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Low Volume" 10 2 .1
 	to offer
 		random < 90
@@ -911,7 +911,7 @@ mission "LLS Long-haul [high value, volume]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment
-		payment 50000
+		payment 100000
 		dialog phrase "lightspeed low volume delivery"
 	npc
 		government "Pirate"
@@ -934,7 +934,7 @@ mission "LLS Long-haul [high value, bulk]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Bulk" 25 2 .05
 	to offer
 		random < 90
@@ -948,7 +948,7 @@ mission "LLS Long-haul [high value, bulk]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment
-		payment 50000
+		payment 100000
 		dialog phrase "lightspeed bulk delivery"
 	npc
 		government "Pirate"
@@ -993,7 +993,7 @@ mission "LLS Standard [high value, single]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment
-		payment 20000
+		payment 50000
 		dialog phrase "lightspeed single item delivery"
 	npc
 		government "Pirate"
@@ -1016,7 +1016,7 @@ mission "LLS Standard [high value, low volume]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Low Volume" 10 2 .1
 	to offer
 		random < 90
@@ -1030,7 +1030,7 @@ mission "LLS Standard [high value, low volume]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment
-		payment 50000
+		payment 75000
 		dialog phrase "lightspeed low volume delivery"
 	npc
 		government "Pirate"
@@ -1053,7 +1053,7 @@ mission "LLS Standard [high value, bulk]"
 	job
 	repeat
 	deadline 1 1.2
-	description "A wealthy client requires the delivery of <commodity> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
+	description "A wealthy client requires the delivery of <cargo> to <destination> by <date>. Payment is <payment>. There's a tight deadline on this job - ensure your fuel reserves are up to the task, and be wary of pirates."
 	cargo "High Value, Bulk" 25 2 .05
 	to offer
 		random < 90
@@ -1067,7 +1067,7 @@ mission "LLS Standard [high value, bulk]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment
-		payment 50000
+		payment 75000
 		dialog phrase "lightspeed bulk delivery"
 	npc
 		government "Pirate"
